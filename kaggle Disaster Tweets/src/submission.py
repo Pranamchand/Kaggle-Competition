@@ -3,7 +3,7 @@ make submission.csv file for kaggle competition
 '''
 
 import pandas as pd
-import joblib
+import pickle
 from src.config import VECTORISED_PATH
 from src.config import TRAIN_COLUMN, SUBMISSION_PATH
 
@@ -13,7 +13,8 @@ def submit_predictions(model, test, vectorizer):
     X_test = vectorizer.transform(X_test)
 
     predictions = model.predict(X_test)
-    joblib.dump(vectorizer, VECTORISED_PATH)
+    with open(VECTORISED_PATH, "wb") as f:
+        pickle.dump(vectorizer, f)
 
     # --- making submission Dataframe --- 
     submission = pd.DataFrame({
