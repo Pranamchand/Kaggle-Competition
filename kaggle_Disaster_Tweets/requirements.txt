@@ -4,8 +4,6 @@ matplotlib
 seaborn
 scikit-learn
 nltk
-xgboost
 streamlit
-pickle
 
 # Install These Packages using --- pip install -r requirements.txt ---
