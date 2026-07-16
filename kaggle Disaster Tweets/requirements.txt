@@ -3,7 +3,8 @@ numpy
 matplotlib
 seaborn
 scikit-learn
-nltkgit 
+nltk
 xgboost
-jupyterlab
-ipykernel
+
+
+# Install These Packages using --- pip install -r requirements.txt ---
