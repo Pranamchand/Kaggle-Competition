@@ -17,6 +17,8 @@
 ![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 ![NLTK](https://img.shields.io/badge/NLTK-1E4620?style=for-the-badge&logo=python&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![Keras](https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white)
 
 </div>
 
@@ -24,7 +26,7 @@
 
 ## 📌 Repository Overview
 
-This repository is a collection of two **Kaggle "Getting Started" competition** solutions, each built as a complete, self-contained ML pipeline — from raw data to a submitted `submission.csv`. Both notebooks follow a consistent, disciplined workflow: explore the data first, engineer features that actually matter, benchmark multiple models honestly, and only then tune the winner.
+This repository is a collection of three **Kaggle "Getting Started" competition** solutions, each built as a complete, self-contained ML pipeline — from raw data to a submitted `submission.csv`. Both notebooks follow a consistent, disciplined workflow: explore the data first, engineer features that actually matter, benchmark multiple models honestly, and only then tune the winner.
 
 <div align="center">
 
@@ -32,12 +34,13 @@ This repository is a collection of two **Kaggle "Getting Started" competition** 
 |:-:|:--|:--|:-:|
 | 1 | 🌪️ [Disaster Tweets Classification](#-1-disaster-tweets-classification) | Binary NLP Classification | 🏅 **628** |
 | 2 | 🚀 [Spaceship Titanic Prediction](#-2-spaceship-titanic-prediction) | Binary Tabular Classification | 🏅 **1733** |
+| 3 | 🔢 [Digit Recognizer (MNIST)](#-3-digit-recognizer-mnist-classification) | Multiclass Image Classification (CNN) | 🏅 **667** |
 
 </div>
 
 <div align="center">
 
-`🧮 16,306 training records analyzed`  •  `🤖 9 models benchmarked`  •  `🔬 2 GridSearchCV tuning runs`  •  `🎯 2 leaderboard submissions`
+`🧮 58,306 training records analyzed`  •  `🤖 10 models benchmarked`  •  `🔬 2 GridSearchCV tuning runs`  •  `🎯 3 leaderboard submissions`
 
 </div>
 
@@ -56,29 +59,6 @@ This repository is a collection of two **Kaggle "Getting Started" competition** 
 
 **Goal:** Given a tweet, predict whether it is describing a real disaster (`target = 1`) or not (`target = 0`) — a classic NLP text-classification problem on the [Kaggle "Natural Language Processing with Disaster Tweets"](https://www.kaggle.com/competitions/nlp-getting-started) dataset (7,613 training tweets, 3,263 test tweets).
 
-### 🔁 Notebook Workflow
-
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"fontSize": "26px", "primaryTextColor": "#ffffff", "lineColor": "#00c6ff"}, "flowchart": {"nodeSpacing": 90, "rankSpacing": 110, "curve": "basis"}} }%%
-flowchart TD
-    A["📥&nbsp;&nbsp;Load Data"] --> B["🔎&nbsp;&nbsp;EDA"]
-    B --> C["🧹&nbsp;&nbsp;Preprocessing"]
-    C --> D["⚙️&nbsp;&nbsp;Feature Engineering"]
-    D --> E["🤖&nbsp;&nbsp;Model Training & Evaluation"]
-    E --> F["🎯&nbsp;&nbsp;Trial & Error Tuning"]
-    F --> G["📄&nbsp;&nbsp;Generate submission.csv"]
-    G --> H["🚀&nbsp;&nbsp;Submit to Kaggle"]
-
-    style A fill:#0f2027,color:#fff,stroke:#00c6ff,stroke-width:2px
-    style B fill:#173544,color:#fff,stroke:#00c6ff,stroke-width:2px
-    style C fill:#204a5c,color:#fff,stroke:#00c6ff,stroke-width:2px
-    style D fill:#00697a,color:#fff,stroke:#00c6ff,stroke-width:2px
-    style E fill:#00909e,color:#fff,stroke:#00c6ff,stroke-width:2px
-    style F fill:#00b4bd,color:#000,stroke:#00c6ff,stroke-width:2px
-    style G fill:#4dd8ff,color:#000,stroke:#00c6ff,stroke-width:2px
-    style H fill:#9fecff,color:#000,stroke:#00c6ff,stroke-width:2px
-```
-
 
 <br/>
 
@@ -93,26 +73,20 @@ flowchart TD
 
 **Goal:** Predict whether a passenger aboard the *Spaceship Titanic* was transported to an alternate dimension after the ship's collision with a spacetime anomaly — a tabular binary classification problem on the [Kaggle Spaceship Titanic](https://www.kaggle.com/competitions/spaceship-titanic) dataset (8,693 training passengers).
 
-### 🔁 Notebook Workflow
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"fontSize": "26px", "primaryTextColor": "#ffffff", "lineColor": "#9933ff"}, "flowchart": {"nodeSpacing": 90, "rankSpacing": 110, "curve": "basis"}} }%%
-flowchart TD
-    A["📥&nbsp;&nbsp;Load Data"] --> B["🔎&nbsp;&nbsp;EDA"]
-    B --> C["🧹&nbsp;&nbsp;Data Preprocessing"]
-    C --> D["⚙️&nbsp;&nbsp;Feature Engineering"]
-    D --> E["🤖&nbsp;&nbsp;Model Selection"]
-    E --> F["🎯&nbsp;&nbsp;Model Tuning"]
-    F --> G["📄&nbsp;&nbsp;Generate submission.csv"]
+<br/>
 
-    style A fill:#1a0033,color:#fff,stroke:#bf80ff,stroke-width:2px
-    style B fill:#2b0052,color:#fff,stroke:#bf80ff,stroke-width:2px
-    style C fill:#40007a,color:#fff,stroke:#bf80ff,stroke-width:2px
-    style D fill:#5c00b3,color:#fff,stroke:#bf80ff,stroke-width:2px
-    style E fill:#7a1aff,color:#fff,stroke:#bf80ff,stroke-width:2px
-    style F fill:#9933ff,color:#fff,stroke:#bf80ff,stroke-width:2px
-    style G fill:#cc99ff,color:#000,stroke:#bf80ff,stroke-width:2px
-```
+## 🔢 3. Digit Recognizer (MNIST) Classification
+
+<div align="center">
+<img src="https://img.shields.io/badge/Best%20Model-CNN%20(Keras)-blue?style=flat-square"/>
+<img src="https://img.shields.io/badge/Test%20Accuracy-98.60%25-orange?style=flat-square"/>
+<img src="https://img.shields.io/badge/Val%20Loss-0.041-yellow?style=flat-square"/>
+</div>
+
+**Goal:** Given a 28×28 grayscale image of a handwritten digit (flattened into 784 pixel columns), predict which digit (0–9) it represents — a classic multiclass image-classification problem on the [Kaggle "Digit Recognizer"](https://www.kaggle.com/competitions/digit-recognizer) dataset (42,000 training images, 28,000 test images).
+
+**Approach:** Pixel values were scaled to a 0–1 range and reshaped from flat 784-length vectors into 28×28×1 image tensors, with labels one-hot encoded across 10 classes. A **Convolutional Neural Network** built in Keras — two `Conv2D` + `MaxPooling2D` blocks followed by a dense layer with dropout for regularization and a softmax output layer — was trained for 5 epochs, reaching **98.60% accuracy** on the held-out validation split.
 
 
 <br/>
