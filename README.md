@@ -1,6 +1,6 @@
 ## 📌 Repository Overview
 
-This repository is a collection of four **Kaggle "Getting Started" competition** solutions, each built as a complete, self-contained ML pipeline — from raw data to a submitted `submission.csv`. The notebooks follow a consistent, disciplined workflow: explore the data first, engineer features that actually matter, benchmark multiple models honestly, and tune where appropriate.
+This repository is a collection of five **Kaggle "Getting Started" competition** solutions, each built as a complete, self-contained ML pipeline — from raw data to a submitted `submission.csv`. The notebooks follow a consistent, disciplined workflow: explore the data first, engineer features that actually matter, benchmark multiple models honestly, and tune where appropriate.
 
 |  #  | Project                                                                  | Task Type                             | Kaggle Leaderboard Rank |
 | :-: | :----------------------------------------------------------------------- | :------------------------------------ | :---------------------: |
@@ -8,8 +8,9 @@ This repository is a collection of four **Kaggle "Getting Started" competition**
 |  2  | 🚀 [Spaceship Titanic Prediction](#-2-spaceship-titanic-prediction)      | Binary Tabular Classification         |       🏅 **1733**       |
 |  3  | 🔢 [Digit Recognizer (MNIST)](#-3-digit-recognizer-mnist-classification) | Multiclass Image Classification (CNN) |        🏅 **667**       |
 |  4  | 🏪 [Store Sales Time Series Forecasting](#-4-store-sales-time-series-forecasting) | Time Series Regression | 🏅 **1022** |
+|  5  | 🏠 [House Prices Prediction](#-5-house-prices--advanced-regression-techniques) | Tabular Regression (Deep Learning) | 🏅 **3388** |
 
-`🧮 3,059,194+ training records analyzed`  •  `🤖 12+ models/approaches explored`  •  `🔬 2+ GridSearchCV tuning runs`  •  `🎯 4 leaderboard submissions`
+`🧮 3,060,654+ training records analyzed`  •  `🤖 13+ models/approaches explored`  •  `🔬 2+ GridSearchCV tuning runs`  •  `🎯 5 leaderboard submissions`
 
 ## 🌪️ 1. Disaster Tweets Classification
 
@@ -34,5 +35,10 @@ This repository is a collection of four **Kaggle "Getting Started" competition**
 **Approach:** The project included data cleaning, date-based feature engineering, merging multiple datasets, handling missing oil prices, holiday feature engineering, categorical encoding, and numerical feature scaling. **Linear Regression** and **XGBoost Regressor** were evaluated, with XGBoost performing substantially better.
 
 
+## 🏠 5. House Prices — Advanced Regression Techniques
+
+**Goal:** Given 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa, predict the final sale price of each home — a tabular regression problem on the [Kaggle "House Prices - Advanced Regression Techniques"](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques) dataset (1,460 training homes, 1,459 test homes).
+
+**Approach:** The project included thorough EDA (countplots for 45 categorical columns and histograms for 32 numeric columns), aggressive missing-value imputation ("None" fills for absent features like PoolQC/Alley/Fence, median-per-neighborhood for LotFrontage, mode fills for MSZoning/Electrical, etc.), semantic dtype fixes (MSSubClass and MoSold cast to categorical), and feature engineering (HouseAge, YearsSinceRemod, TotalSF). All categorical features were label-encoded and numerics scaled with StandardScaler. A **Keras deep neural network** — four Dense layers (128 → 64 → 32 → 1) with ReLU activations, Dropout regularization (0.3 / 0.2), Adam optimizer (lr = 0.001), and EarlyStopping (patience 20) — was trained on log-transformed sale prices for up to 200 epochs, achieving a **validation MSE of 0.0418** on the log target.
 
 *"Every leaderboard rank starts with a messy* `train.csv` *and a stubborn refusal to skip the EDA."* 🚀
